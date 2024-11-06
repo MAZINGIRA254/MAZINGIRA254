@@ -6,173 +6,219 @@
     <title>Mazingira 254 - Environmental Solutions</title>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        /* Global Styles */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Roboto', sans-serif;
-            background: #f3f6f3;
-            color: #2d3436;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
-        *, *::before, *::after {
-            box-sizing: border-box;
-        }
+    /* Global Styles */
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Roboto', sans-serif;
+        background: #f3f6f3;
+        color: #2d3436;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+    }
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
 
-        /* Header Styles */
-        header {
-            background: #2b5a30;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-            position: relative;
-        }
-        header h1 {
-            font-size: 2.8em;
-            font-family: 'Lora', serif;
-            letter-spacing: 2px;
-        }
-        header h2 {
-            font-size: 1.1em;
-            font-weight: 300;
-            margin-top: 10px;
-            letter-spacing: 1px;
-        }
+    /* Header Styles */
+    header {
+        background: #2b5a30;
+        color: white;
+        padding: 40px 20px;
+        text-align: center;
+        position: relative;
+    }
+    header h1 {
+        font-size: 2.8em;
+        font-family: 'Lora', serif;
+        letter-spacing: 2px;
+    }
+    header h2 {
+        font-size: 1.1em;
+        font-weight: 300;
+        margin-top: 10px;
+        letter-spacing: 1px;
+    }
 
-        /* Navigation Chips */
-        .nav-chips {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 8px;
-            margin-top: 20px;
+    /* Navigation Chips */
+    .nav-chips {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 20px;
+    }
+    .nav-chips button {
+        background: #27ae60;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        font-size: 1em;
+        transition: background 0.3s, transform 0.2s;
+    }
+    .nav-chips button:hover {
+        background: #1e8449;
+        transform: translateY(-2px);
+    }
+
+    /* Parallax Section */
+    .parallax {
+        background-image: url('https://firebasestorage.googleapis.com/v0/b/wenice-1c80d.appspot.com/o/APS%20321%20IMAGES%2Fimage%20(35).webp?alt=media&token=d9b0b141-e24e-4ac5-b3d3-1c07b6ef2db1');
+        background-attachment: fixed;
+        background-size: cover;
+        height: 280px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .parallax-content {
+        color: white;
+        text-align: center;
+        padding: 20px;
+        background: rgba(43, 90, 48, 0.6);
+        border-radius: 8px;
+        opacity: 0.95;
+    }
+
+    /* Section Styles */
+    section {
+        padding: 40px 20px;
+        background: white;
+        border-radius: 8px;
+        margin: 20px auto;
+        max-width: 1200px;
+        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+    }
+    h3 {
+        text-align: center;
+        font-size: 2em;
+        color: #1e8449;
+        font-family: 'Lora', serif;
+        margin-bottom: 20px;
+    }
+
+    /* Carousel container styling */
+    #image-carousel {
+        overflow: hidden;
+        width: 100%;
+        max-width: 100vw;
+        padding: 20px 0;
+        text-align: center;
+    }
+    .carousel {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+    }
+    .carousel-track {
+        display: flex;
+        gap: 10px;
+        animation: scroll 30s linear infinite;
+    }
+
+    /* Individual image styling */
+    .carousel-track img {
+        max-width: 200px; /* Adjust based on how many images you want visible at a time */
+        height: auto;
+        flex-shrink: 0;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+    }
+
+    /* Hover effect for images */
+    .carousel-track img:hover {
+        transform: scale(1.05);
+    }
+
+    /* Responsive adjustments for the carousel */
+    @media (max-width: 768px) {
+        .carousel-track img {
+            max-width: 150px;
+        }
+    }
+    @media (max-width: 480px) {
+        .carousel-track img {
+            max-width: 120px;
+        }
+    }
+
+    /* Keyframes for smooth scrolling effect */
+    @keyframes scroll {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(calc(-100% - 10px));
+        }
+    }
+
+    /* Additional Section Styles */
+    .education {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+    }
+    .education .card {
+        flex: 1 1 calc(30% - 20px);
+        padding: 15px;
+        background: #f9f9f9;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    audio {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    /* Contact Section */
+    #contact {
+        background: #f1f8f1;
+        color: #2d3436;
+        padding: 40px 20px;
+        text-align: center;
+        border-radius: 8px;
+    }
+    #contact a {
+        color: #27ae60;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    /* Footer Styles */
+    footer {
+        background: #2b5a30;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        font-size: 0.9em;
+    }
+    footer a {
+        color: #aaffaa;
+        text-decoration: none;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .education .card {
+            flex: 1 1 calc(45% - 10px);
+        }
+    }
+    @media (max-width: 576px) {
+        .education .card {
+            flex: 1 1 calc(90% - 10px);
         }
         .nav-chips button {
-            background: #27ae60;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            font-size: 1em;
-            transition: background 0.3s, transform 0.2s;
-        }
-        .nav-chips button:hover {
-            background: #1e8449;
-            transform: translateY(-2px);
-        }
-
-        /* Parallax Section */
-        .parallax {
-            background-image: url('https://firebasestorage.googleapis.com/v0/b/wenice-1c80d.appspot.com/o/APS%20321%20IMAGES%2Fimage%20(35).webp?alt=media&token=d9b0b141-e24e-4ac5-b3d3-1c07b6ef2db1');
-            background-attachment: fixed;
-            background-size: cover;
-            height: 280px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-        }
-        .parallax-content {
-            color: white;
-            text-align: center;
-            padding: 20px;
-            background: rgba(43, 90, 48, 0.6);
-            border-radius: 8px;
-            opacity: 0.95;
-        }
-
-        /* Section Styles */
-        section {
-            padding: 40px 20px;
-            background: white;
-            border-radius: 8px;
-            margin: 20px auto;
-            max-width: 1200px;
-            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
-        }
-        h3 {
-            text-align: center;
-            font-size: 2em;
-            color: #1e8449;
-            font-family: 'Lora', serif;
-            margin-bottom: 20px;
-        }
-
-        .gifs {
-            display: flex;
-            overflow-x: auto;
-            gap: 15px;
-            padding: 10px;
-        }
-        .gifs img {
-            height: 120px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .education {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
-        }
-        .education .card {
-            flex: 1 1 calc(30% - 20px);
-            padding: 15px;
-            background: #f9f9f9;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        audio {
-            width: 100%;
-            margin-top: 10px;
-        }
-
-        /* Contact Section */
-        #contact {
-            background: #f1f8f1;
-            color: #2d3436;
-            padding: 40px 20px;
-            text-align: center;
-            border-radius: 8px;
-        }
-        #contact a {
-            color: #27ae60;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        /* Footer Styles */
-        footer {
-            background: #2b5a30;
-            color: white;
-            text-align: center;
-            padding: 20px;
             font-size: 0.9em;
         }
-        footer a {
-            color: #aaffaa;
-            text-decoration: none;
-        }
+    }
+</style>
 
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .education .card {
-                flex: 1 1 calc(45% - 10px);
-            }
-        }
-        @media (max-width: 576px) {
-            .education .card {
-                flex: 1 1 calc(90% - 10px);
-            }
-            .nav-chips button {
-                font-size: 0.9em;
-            }
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -207,14 +253,42 @@
     </section>
 
     <!-- Climate Inspirations Section -->
-    <section id="gifs">
-        <h3>Climate Inspirations</h3>
-        <div class="gifs">
-            <img src="link-to-gif1.gif" alt="Inspiration 1">
-            <img src="link-to-gif2.gif" alt="Inspiration 2">
-            <img src="link-to-gif3.gif" alt="Inspiration 3">
+    <section id="image-carousel">
+    <h3>Climate Inspirations</h3>
+    <div class="carousel">
+        <div class="carousel-track">
+            <!-- Insert each image here, which will automatically loop due to CSS animation -->
+            <img src="https://firebasestorage.googleapis.com/v0/b/wenice-1c80d.appspot.com/o/APS%20321%20IMAGES%2Fimage%20(9).webp?alt=media&token=8a0ea60c-5c11-4b28-86c5-3528f8e846b4" alt="Inspiration 1">
+            <img src="https://firebasestorage.googleapis.com/v0/b/wenice-1c80d.appspot.com/o/APS%20321%20IMAGES%2Fimage%20(8).webp?alt=media&token=ee2e7531-1c17-4d8e-a267-56d2cba96771" alt="Inspiration 2">
+            <img src="https://firebasestorage.googleapis.com/v0/b/wenice-1c80d.appspot.com/o/APS%20321%20IMAGES%2Fimage%20(7).webp?alt=media&token=f3bc82ed-52a3-4780-9386-6dd7f326d0da" alt="Inspiration 3">
+            <img src="https://firebasestorage.googleapis.com/v0/b/wenice-1c80d.appspot.com/o/APS%20321%20IMAGES%2Fimage%20(6).webp?alt=media&token=a609bb24-a108-446e-ba52-7e61b53763fd" alt="Inspiration 4">
+            <img src="https://firebasestorage.googleapis.com/v0/b/wenice-1c80d.appspot.com/o/APS%20321%20IMAGES%2Fimage%20(5).webp?alt=media&token=0d74b50c-e157-44ed-9bb7-352551f3ece1" alt="Inspiration 5">
+            <img src="https://firebasestorage.googleapis.com/v0/b/wenice-1c80d.appspot.com/o/APS%20321%20IMAGES%2Fimage%20(45).webp?alt=media&token=2e1c5adc-3fa5-40a1-a96b-e48e4d99657b" alt="Inspiration 6">
+            <img src="https://firebasestorage.googleapis.com/v0/b/wenice-1c80d.appspot.com/o/APS%20321%20IMAGES%2Fimage%20(43).webp?alt=media&token=359207e7-cb27-451e-b41b-ac710660fce9" alt="Inspiration 7">
+            <img src="https://firebasestorage.googleapis.com/v0/b/wenice-1c80d.appspot.com/o/APS%20321%20IMAGES%2Fimage%20(41).webp?alt=media&token=9f5ed802-fcd2-4ed6-a858-857c69818cc8" alt="Inspiration 8">
+            <img src="https://firebasestorage.googleapis.com/v0/b/wenice-1c80d.appspot.com/o/APS%20321%20IMAGES%2Fimage%20(40).webp?alt=media&token=8ab6c944-6d58-43ff-aa36-0e2dce9c8ee5" alt="Inspiration 9">
+            <img src="https://firebasestorage.googleapis.com/v0/b/wenice-1c80d.appspot.com/o/APS%20321%20IMAGES%2Fimage%20(39).webp?alt=media&token=b352a27f-6572-4420-8abe-0594ed895cf2" alt="Inspiration 10">
+            <img src="https://firebasestorage.googleapis.com/v0/b/wenice-1c80d.appspot.com/o/APS%20321%20IMAGES%2Fimage%20(38).webp?alt=media&token=97a774d3-bec2-45a1-a0e5-7dcdedfc16a8" alt="Inspiration 11">
+            <img src="https://firebasestorage.googleapis.com/v0/b/wenice-1c80d.appspot.com/o/APS%20321%20IMAGES%2Fimage%20(37).webp?alt=media&token=c83bfeef-758a-4335-bf1d-2fa31dcbc119" alt="Inspiration 12">
+            <img src="https://firebasestorage.googleapis.com/v0/b/wenice-1c80d.appspot.com/o/APS%20321%20IMAGES%2Fimage%20(36).webp?alt=media&token=17a9ba54-8c6b-453c-9933-854261924382" alt="Inspiration 13">
+            <img src="https://firebasestorage.googleapis.com/v0/b/wenice-1c80d.appspot.com/o/APS%20321%20IMAGES%2Fimage%20(35).webp?alt=media&token=d9b0b141-e24e-4ac5-b3d3-1c07b6ef2db1" alt="Inspiration 14">
+            <img src="https://firebasestorage.googleapis.com/v0/b/wenice-1c80d.appspot.com/o/APS%20321%20IMAGES%2Fimage%20(23).webp?alt=media&token=dec47740-f454-4b00-ab15-76fdf94035b8" alt="Inspiration 15">
+            <img src="https://firebasestorage.googleapis.com/v0/b/wenice-1c80d.appspot.com/o/APS%20321%20IMAGES%2Fimage%20(24).webp?alt=media&token=12aafd1d-09d3-46ec-a408-0d7807064bc2" alt="Inspiration 16">
+            <img src="https://firebasestorage.googleapis.com/v0/b/wenice-1c80d.appspot.com/o/APS%20321%20IMAGES%2Fimage%20(28).webp?alt=media&token=b6c13c09-6400-4794-8aa1-5358748b1db8" alt="Inspiration 17">
+            <img src="https://firebasestorage.googleapis.com/v0/b/wenice-1c80d.appspot.com/o/APS%20321%20IMAGES%2Fimage%20(30).webp?alt=media&token=d4bd4a24-9c61-48d2-9552-810c22b225ec" alt="Inspiration 18">
+            <img src="https://firebasestorage.googleapis.com/v0/b/wenice-1c80d.appspot.com/o/APS%20321%20IMAGES%2Fimage%20(31).webp?alt=media&token=83f67216-2fb0-4bfa-94d7-f1f515f209eb" alt="Inspiration 19">
+            <img src="https://firebasestorage.googleapis.com/v0/b/wenice-1c80d.appspot.com/o/APS%20321%20IMAGES%2Fimage%20(32).webp?alt=media&token=1b15a91a-065a-49d2-ad1b-f48503b6169d" alt="Inspiration 20">
+            <img src="https://firebasestorage.googleapis.com/v0/b/wenice-1c80d.appspot.com/o/APS%20321%20IMAGES%2Fimage%20(33).webp?alt=media&token=f1392209-acc6-4429-8ac5-0f538076f840" alt="Inspiration 21">
+            <img src="https://firebasestorage.googleapis.com/v0/b/wenice-1c80d.appspot.com/o/APS%20321%20IMAGES%2Fimage%20(10).webp?alt=media&token=0a8bfc43-a72b-4832-bc17-f5f18d0179ef" alt="Inspiration 22">
+            <img src="https://firebasestorage.googleapis.com/v0/b/wenice-1c80d.appspot.com/o/APS%20321%20IMAGES%2Fimage%20(14).webp?alt=media&token=a6a5a097-92d5-4e86-9742-670d15fd4bce" alt="Inspiration 23">
+            <img src="https://firebasestorage.googleapis.com/v0/b/wenice-1c80d.appspot.com/o/APS%20321%20IMAGES%2Fimage%20(17).webp?alt=media&token=564b3aad-97fa-4413-acd4-cde89a06c964" alt="Inspiration 24">
+            <img src="https://firebasestorage.googleapis.com/v0/b/wenice-1c80d.appspot.com/o/APS%20321%20IMAGES%2Fimage%20(19).webp?alt=media&token=902523ab-de77-4db7-960f-0cdc129d87d8" alt="Inspiration 25">
+            <img src="https://firebasestorage.googleapis.com/v0/b/wenice-1c80d.appspot.com/o/APS%20321%20IMAGES%2Fimage%20(20).webp?alt=media&token=f4c22be9-6cc5-4c6c-80d8-b6a8fb00fb4e" alt="Inspiration 26">
+            <img src="https://firebasestorage.googleapis.com/v0/b/wenice-1c80d.appspot.com/o/APS%20321%20IMAGES%2Fimage%20(11).webp?alt=media&token=eb3b8f58-9c7d-4862-a6bc-0e471291511e" alt="Inspiration 27">
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Environmental Insights Section -->
     <section id="education">
